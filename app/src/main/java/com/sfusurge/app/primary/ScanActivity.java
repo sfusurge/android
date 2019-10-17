@@ -5,11 +5,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.sfusurge.app.primary.service.NfcService;
+import com.sfusurge.app.primary.service.Preferences;
 
 /**
  * An example full-screen activity that shows and hides the system UI (i.e.
@@ -22,10 +25,20 @@ public class ScanActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_scan);
 
+        Preferences.setDefaults(this);
+
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
+        // Link Settings button
+        final ImageButton button = findViewById(R.id.settings_button);
+        button.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                startActivity(new Intent(ScanActivity.this, SettingsActivity.class));
+            }
+        });
+
 
 
 //        try {
@@ -38,6 +51,9 @@ public class ScanActivity extends AppCompatActivity {
 //            }
 //            return;
 //        }
+
+
+
     }
 
     @Override
