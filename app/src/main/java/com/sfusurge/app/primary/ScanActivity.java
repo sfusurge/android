@@ -39,20 +39,16 @@ public class ScanActivity extends AppCompatActivity {
             }
         });
 
-
-
-//        try {
-////            nfcService = new NfcService(this);
-//        }
-//        catch(NfcService.NfcException e) {
-//            Toast.makeText(this, e.getReason().getText(), Toast.LENGTH_LONG).show();
-//            if(e.getReason().equals(NfcService.NfcException.Reason.NOT_SUPPORTED)) {
-//                finish();
-//            }
-//            return;
-//        }
-
-
+        try {
+            nfcService = new NfcService(this);
+        }
+        catch(NfcService.NfcException e) {
+            Toast.makeText(this, e.getReason().getText(), Toast.LENGTH_LONG).show();
+            if(e.getReason().equals(NfcService.NfcException.Reason.NOT_SUPPORTED)) {
+                finish();
+            }
+            return;
+        }
 
     }
 
@@ -89,7 +85,9 @@ public class ScanActivity extends AppCompatActivity {
             return;
         }
 
-
-        Toast.makeText(this, "Read tag data", Toast.LENGTH_SHORT).show();
+        Toast.makeText(
+                this, "Signed into event " + data + "!",
+                Toast.LENGTH_LONG
+        ).show();
     }
 }
