@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">SFU Surge</string>
+
+    <string name="welcome_me">Welcome, Jeffrey</string>
+    <string name="events">Events</string>
+    <string name="scan_instructions">Scan the event tag now.</string>
+</resources>
