@@ -1,11 +1,9 @@
 package com.sfusurge.app.primary;
 
-import android.app.ActionBar;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
@@ -47,7 +45,6 @@ public class ScanActivity extends AppCompatActivity {
             if(e.getReason().equals(NfcService.NfcException.Reason.NOT_SUPPORTED)) {
                 finish();
             }
-            return;
         }
 
     }
@@ -68,6 +65,7 @@ public class ScanActivity extends AppCompatActivity {
 
     @Override
     protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
         readTagDataTo(intent);
     }
 
