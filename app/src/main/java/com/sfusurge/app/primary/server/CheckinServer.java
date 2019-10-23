@@ -17,6 +17,8 @@ public class CheckinServer {
 
     private static final String TAG = CheckinServer.class.getName();
 
+    private static final String SERVER_URL = "http://sfusurge-checkin.herokuapp.com";
+
     // Returns a built Request object which should be fed into a Volley Queue.
     public static Request checkIntoEvent(Activity context, final String eventCode, final TextView resultView) {
 
@@ -34,7 +36,7 @@ public class CheckinServer {
 
         return new JsonObjectRequest(
                 Request.Method.POST,
-                "http://sfusurge-checkin.herokuapp.com/event/checkin/" + eventCode,
+                SERVER_URL + "/event/checkin/" + eventCode,
                 jsonBody,
                 new Response.Listener<JSONObject>() {
                     @Override
