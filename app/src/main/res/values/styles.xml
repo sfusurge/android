@@ -5,6 +5,7 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textColor">@color/colorOffWhite</item>
 
         <item name="android:statusBarColor">@color/colorPrimaryDark</item>
         <item name="android:actionBarStyle">@style/ActionBarStyle</item>
@@ -15,17 +16,23 @@
     </style>
 
     <style name="FullscreenTheme" parent="Theme.AppCompat.NoActionBar">
+        <!-- Content from AppTheme -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textColor">@color/colorOffWhite</item>
 
         <item name="android:statusBarColor">@color/colorPrimaryDark</item>
+        <item name="android:actionBarStyle">@style/ActionBarStyle</item>
 
+        <!-- Fullscreen settings -->
         <item name="android:windowActionBar">false</item>
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowFullscreen">true</item>
         <item name="android:windowActionBarOverlay">false</item>
+        <item name="android:windowContentOverlay">@null</item>
         <item name="android:windowBackground">@null</item>
+
         <item name="metaButtonBarStyle">?android:attr/buttonBarStyle</item>
         <item name="metaButtonBarButtonStyle">?android:attr/buttonBarButtonStyle</item>
     </style>

@@ -34,10 +34,8 @@
             android:id="@+id/scan_activity_welcome"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:keepScreenOn="true"
             android:gravity="center"
             android:text="@string/welcome_me"
-            android:textColor="#e2e2e2"
             android:textSize="40sp"
             android:textStyle="bold" />
 
@@ -53,10 +51,8 @@
             android:id="@+id/action"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:keepScreenOn="true"
             android:gravity="center"
             android:text="@string/action"
-            android:textColor="#e2e2e2"
             android:textSize="20sp"
             android:textStyle="bold" />
 
