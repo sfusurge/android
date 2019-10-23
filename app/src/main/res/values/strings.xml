@@ -2,7 +2,7 @@
     <string name="app_name">SFU Surge</string>
 
     <!-- Scan activity -->
-    <string name="welcome_me">Welcome, Jeffrey</string>
+    <string name="welcome_me">Welcome, Brad</string>
     <string name="events">Events</string>
     <string name="scan_instructions">Scan the event tag now.</string>
 

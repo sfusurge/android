@@ -5,10 +5,15 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.toolbox.Volley;
+import com.sfusurge.app.primary.server.CheckinServer;
 import com.sfusurge.app.primary.service.NfcService;
 import com.sfusurge.app.primary.service.Preferences;
 
@@ -19,6 +24,8 @@ import com.sfusurge.app.primary.service.Preferences;
 public class ScanActivity extends AppCompatActivity {
 
     private NfcService nfcService;
+
+    private RequestQueue requestQueue;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +44,8 @@ public class ScanActivity extends AppCompatActivity {
             }
         });
 
+        // Instantiate private members
+
         try {
             nfcService = new NfcService(this);
         }
@@ -47,6 +56,7 @@ public class ScanActivity extends AppCompatActivity {
             }
         }
 
+        requestQueue =  Volley.newRequestQueue(this);
     }
 
     @Override
@@ -58,34 +68,58 @@ public class ScanActivity extends AppCompatActivity {
     @Override
     public void onResume() {
         super.onResume();
+
         if(nfcService != null) {
             nfcService.resume(this);
         }
+
+        String welcomeMsg = "Welcome, " + Preferences.getString(this, "first_name");
+        TextView welcome = findViewById(R.id.scan_activity_welcome);
+        welcome.setText(welcomeMsg);
     }
 
+    // Receive an NFC reading
     @Override
     protected void onNewIntent(Intent intent) {
         super.onNewIntent(intent);
-        readTagDataTo(intent);
+        String eventCode = readTagData(intent);
+        if (eventCode != null && !eventCode.isEmpty()) {
+            checkIntoEvent(eventCode);
+        }
     }
 
-    private void readTagDataTo(Intent intent) {
+    private String readTagData(Intent intent) {
         String data;
         try {
             data = nfcService.readTagFromIntent(intent);
-        }
-        catch(NfcService.NfcException e) {
-            Toast.makeText(this, e.getReason().getText(), Toast.LENGTH_LONG).show();
-            return;
-        }
-
-        if(data == null) {
-            return;
+        } catch (NfcService.NfcException e) {
+            setActionStatus(e.getReason().getText());
+            return "";
         }
 
-        Toast.makeText(
-                this, "Signed into event " + data + "!",
-                Toast.LENGTH_LONG
-        ).show();
+        if (data == null) {
+            setActionStatus("No information found on event tag.");
+            return "";
+        }
+
+        return data;
     }
+
+    private void checkIntoEvent(final String eventCode) {
+        Request r = CheckinServer.checkIntoEvent(
+                this, eventCode,
+                (TextView)findViewById(R.id.action)
+        );
+        if (r == null) {
+            setActionStatus("Failed to build request object.");
+            return;
+        }
+        requestQueue.add(r);
+    }
+
+    private void setActionStatus(String text) {
+        TextView t = findViewById(R.id.action);
+        t.setText(text);
+    }
+
 }
