@@ -19,7 +19,7 @@
         android:contentDescription="@string/title_activity_settings"
         android:scaleType="fitCenter"
         android:src="@drawable/ic_settings"
-        android:background="@null"/>
+        android:background="?android:attr/selectableItemBackgroundBorderless" />
 
     <LinearLayout
         android:layout_width="match_parent"
