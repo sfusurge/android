@@ -79,7 +79,7 @@
     </style>
 
     <style name="EditText" parent="@style/Text">
-        <item name="android:inputType">text</item>
+        <item name="android:inputType">textCapWords</item>
         <item name="android:singleLine">true</item>
         <item name="android:maxLines">1</item>
 

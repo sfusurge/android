@@ -76,9 +76,10 @@
             android:hint="@string/sfu_email">
 
             <EditText
-                android:id="@+id/sfu_email_input"
+                android:id="@+id/email_input"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"
                 style="@style/EditTextLast" />
         </com.google.android.material.textfield.TextInputLayout>
 
