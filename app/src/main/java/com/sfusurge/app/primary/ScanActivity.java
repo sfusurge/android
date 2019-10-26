@@ -15,7 +15,7 @@ import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.Volley;
 import com.sfusurge.app.primary.server.CheckinServer;
 import com.sfusurge.app.primary.service.NfcService;
-import com.sfusurge.app.primary.service.Preferences;
+import com.sfusurge.app.primary.service.PreferencesManager;
 
 /**
  * An example full-screen activity that shows and hides the system UI (i.e.
@@ -71,7 +71,7 @@ public class ScanActivity extends AppCompatActivity {
             nfcService.resume(this);
         }
 
-        String welcomeMsg = "Welcome, " + Preferences.getString(this, "first_name");
+        String welcomeMsg = "Welcome, " + PreferencesManager.getString(this, "first_name");
         TextView welcome = findViewById(R.id.scan_activity_welcome);
         welcome.setText(welcomeMsg);
     }

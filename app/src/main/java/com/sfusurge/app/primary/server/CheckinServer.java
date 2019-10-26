@@ -8,7 +8,7 @@ import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
-import com.sfusurge.app.primary.service.Preferences;
+import com.sfusurge.app.primary.service.PreferencesManager;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -24,9 +24,9 @@ public class CheckinServer {
 
         JSONObject jsonBody = new JSONObject();
         try {
-            jsonBody.put("firstName", Preferences.getString(context, "first_name"));
-            jsonBody.put("lastName", Preferences.getString(context, "last_name"));
-            jsonBody.put("email", Preferences.getString(context, "email"));
+            jsonBody.put("firstName", PreferencesManager.getString(context, "first_name"));
+            jsonBody.put("lastName", PreferencesManager.getString(context, "last_name"));
+            jsonBody.put("email", PreferencesManager.getString(context, "email"));
         } catch (JSONException e) {
             Log.e(TAG, "" + e.getMessage());
             e.printStackTrace();

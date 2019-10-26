@@ -16,6 +16,7 @@ import java.io.UnsupportedEncodingException;
 import java.util.Arrays;
 
 
+@SuppressWarnings("unused")
 public class NfcService {
 
     private static final String TAG = NfcService.class.getSimpleName();
