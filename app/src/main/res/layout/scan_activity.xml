@@ -7,7 +7,6 @@
     android:layout_height="match_parent"
     android:padding="10dp"
     android:orientation="vertical"
-    android:background="#2a3479"
     tools:context=".ScanActivity">
 
     <ImageButton
@@ -27,8 +26,7 @@
         android:paddingLeft="16dp"
         android:paddingRight="16dp"
         android:orientation="vertical"
-        android:gravity="center"
-        tools:context=".ScanActivity">
+        android:gravity="center">
 
         <TextView
             android:id="@+id/scan_activity_welcome"
