@@ -24,17 +24,12 @@ public class InputActivity extends AppCompatActivity {
             R.id.email_input
     };
 
-    private static final String fieldsSet = "fieldsSet";
+    public static final String fieldsSet = "fieldsSet";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_input);
-
-        // Skip if already filled in
-        if (fieldsSet()) {
-            navigateToNextActivity();
-        }
 
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
@@ -55,14 +50,9 @@ public class InputActivity extends AppCompatActivity {
         });
     }
 
-    // Field is set by button when advancing
-    private boolean fieldsSet() {
-        return PreferencesManager.getBoolean(this, fieldsSet);
-    }
-
     private void navigateToNextActivity() {
         startActivity(new Intent(InputActivity.this, ScanActivity.class));
-        finishActivity(0);
+        finish();
     }
 
     private boolean inputFieldsCompleted() {
