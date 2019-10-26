@@ -47,34 +47,47 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
-    <style name="TextHeader1">
-        <item name="android:padding">32dp</item>
+    <style name="Text">
+        <item name="android:fontFamily">@font/barlow</item>
+    </style>
+
+    <style name="TextHeader1" parent="@style/Text">
+        <item name="android:paddingTop">16dp</item>
+        <item name="android:paddingBottom">16dp</item>
+        <item name="android:textSize">40sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextHeader2" parent="@style/Text">
+        <item name="android:paddingTop">16dp</item>
+        <item name="android:paddingBottom">16dp</item>
         <item name="android:textSize">20sp</item>
         <item name="android:textStyle">bold</item>
     </style>
 
-    <style name="TextWarning">
+    <style name="TextWarning" parent="@style/Text">
         <item name="android:padding">16dp</item>
         <item name="android:textSize">12sp</item>
         <item name="android:textColor">@android:color/holo_red_light</item>
 
-        <item name="android:visibility">gone</item>
+        <item name="android:visibility">gone</item>  <!-- Toggled programmatically -->
     </style>
 
-    <style name="TextInputLayout">
+    <style name="TextInputLayout" parent="@style/Text">
         <item name="android:paddingTop">8dp</item>
         <item name="android:paddingLeft">32dp</item>
         <item name="android:paddingRight">32dp</item>
     </style>
 
-    <style name="EditText">
+    <style name="EditText" parent="@style/Text">
+        <item name="android:inputType">text</item>
         <item name="android:singleLine">true</item>
         <item name="android:maxLines">1</item>
 
         <item name="android:imeOptions">actionNext</item>
     </style>
 
-    <style name="EditTextLast" parent="EditText">
+    <style name="EditTextLast" parent="@style/EditText">
         <item name="android:imeOptions">actionDone</item>
     </style>
 

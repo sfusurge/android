@@ -35,9 +35,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="@string/welcome_me"
-            android:textSize="40sp"
-            android:textStyle="bold" />
+            style="@style/TextHeader1"
+            android:text="@string/welcome_me" />
 
         <ImageView
             android:layout_width="300sp"
@@ -52,8 +51,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="@string/action"
-            style="@style/TextHeader1" />
+            style="@style/TextHeader2"
+            android:text="@string/action" />
 
     </LinearLayout>
 </RelativeLayout>
