@@ -6,6 +6,7 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:textColor">@color/colorPrimaryDark</item>
+        <item name="android:background">@color/colorOffWhite</item>
 
         <item name="android:statusBarColor">@color/colorPrimaryDark</item>
         <item name="android:actionBarStyle">@style/ActionBarStyle</item>
@@ -17,10 +18,11 @@
 
     <style name="FullscreenTheme" parent="Theme.AppCompat.NoActionBar">
         <!-- Content from AppTheme -->
-        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimary">@color/colorPrimaryDark</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:textColor">@color/colorOffWhite</item>
+        <item name="android:background">@color/colorPrimaryDark</item>
 
         <item name="android:statusBarColor">@color/colorPrimaryDark</item>
         <item name="android:actionBarStyle">@style/ActionBarStyle</item>
@@ -31,10 +33,49 @@
         <item name="android:windowFullscreen">true</item>
         <item name="android:windowActionBarOverlay">false</item>
         <item name="android:windowContentOverlay">@null</item>
-        <item name="android:windowBackground">@null</item>
 
         <item name="metaButtonBarStyle">?android:attr/buttonBarStyle</item>
         <item name="metaButtonBarButtonStyle">?android:attr/buttonBarButtonStyle</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="TextHeader1">
+        <item name="android:padding">32dp</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextWarning">
+        <item name="android:padding">16dp</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@android:color/holo_red_light</item>
+
+        <item name="android:visibility">gone</item>
+    </style>
+
+    <style name="TextInputLayout">
+        <item name="android:paddingTop">8dp</item>
+        <item name="android:paddingLeft">32dp</item>
+        <item name="android:paddingRight">32dp</item>
+    </style>
+
+    <style name="EditText">
+        <item name="android:singleLine">true</item>
+        <item name="android:maxLines">1</item>
+
+        <item name="android:imeOptions">actionNext</item>
+    </style>
+
+    <style name="EditTextLast" parent="EditText">
+        <item name="android:imeOptions">actionDone</item>
     </style>
 
 </resources>

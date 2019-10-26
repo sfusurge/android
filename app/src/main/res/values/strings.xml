@@ -1,6 +1,13 @@
 <resources>
     <string name="app_name">SFU Surge</string>
 
+    <!-- Input activity -->
+    <string name="input_description">Enter your details for event check-in.</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="sfu_email">SFU Email</string>
+    <string name="input_warning">All fields must be filled in.</string>
+
     <!-- Scan activity -->
     <string name="welcome_me">Welcome</string>
     <string name="events">Events</string>

@@ -32,8 +32,6 @@ public class ScanActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.scan_activity);
 
-        Preferences.setDefaults(this);
-
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         // Link Settings button
