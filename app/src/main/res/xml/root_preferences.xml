@@ -14,19 +14,23 @@
   ~ limitations under the License.
   -->
 
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <EditTextPreference
         android:key="first_name"
         android:title="First Name"
-        android:defaultValue="@string/pref_first_name_default" />
+        android:defaultValue="@string/pref_first_name_default"
+        app:useSimpleSummaryProvider="true"/>
     <EditTextPreference
         android:key="last_name"
         android:title="Last Name"
-        android:defaultValue="@string/pref_last_name_default" />
+        android:defaultValue="@string/pref_last_name_default"
+        app:useSimpleSummaryProvider="true" />
     <EditTextPreference
         android:key="email"
         android:title="SFU Email"
-        android:defaultValue="@string/pref_email_default" />
+        android:defaultValue="@string/pref_email_default"
+        app:useSimpleSummaryProvider="true" />
 
 </PreferenceScreen>
