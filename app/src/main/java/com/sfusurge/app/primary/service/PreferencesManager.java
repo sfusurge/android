@@ -69,6 +69,10 @@ public class PreferencesManager {
                 .apply();
     }
 
+    public static void clear(Activity context) {
+        getEditableSharedPreferences(context).clear().apply();
+    }
+
     private static SharedPreferences.Editor getEditableSharedPreferences(Activity context) {
         return PreferenceManager.getDefaultSharedPreferences(context).edit();
     }
