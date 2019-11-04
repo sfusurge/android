@@ -3,6 +3,7 @@ package com.sfusurge.app.primary;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -30,6 +31,12 @@ public class ScanActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        // Allow transitions
+        // Must be called before setting ContentView
+        getWindow().requestFeature(Window.FEATURE_CONTENT_TRANSITIONS);
+        getWindow().setAllowEnterTransitionOverlap(true);
+
         setContentView(R.layout.scan_activity);
 
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
