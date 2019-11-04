@@ -33,4 +33,9 @@
         android:defaultValue="@string/pref_email_default"
         app:useSimpleSummaryProvider="true" />
 
+    <Preference
+        android:key="@string/pref_reset_button_key"
+        android:title="Reset app"
+        android:summary="@string/reset_summary" />
+
 </PreferenceScreen>
