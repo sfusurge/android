@@ -30,3 +30,13 @@ cp keystore.properties.template keystore.properties
 This file will be ignored by Git.
 
 Set your keystore information in this file.
+
+## User Instructions
+
+Download the "SFU Surge" app from Google Play.
+
+Open the application and enter your information.
+
+Enable NFC on your device.
+
+Tap your device against the NFC card (ask an executive!)
