@@ -6,6 +6,8 @@ Download the app from the Google Play Store [here](https://play.google.com/store
 
 The application connects with [this server](https://github.com/sfusurge/checkin-server).
 
+NOTE : This application is only compatible with devices that have an NFC(Near field Communications) chip.
+ 
 ## Setup Instructions
 
 ### Codebase
